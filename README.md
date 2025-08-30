@@ -46,11 +46,11 @@ yay -S hyprland waybar rofi swww cliphist wl-clipboard matugen oh-my-zsh-git
 
 ### Window Management
 - **Super + Q** → Close active window
-- **Super + Space** → Toggle floating mode
+- **Super + F** → Toggle floating mode
 - **Super + Shift + F** → Toggle fullscreen
 - **Super + Return** → Open terminal
 - **Super + E** → Open file manager
-- **Super + D** → Application launcher
+- **Super + Space** → Application launcher
 
 ### Screenshots
 - **Super + Shift + S** → Area selection screenshot
