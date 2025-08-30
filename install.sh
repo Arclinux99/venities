@@ -95,7 +95,7 @@ check_dependencies() {
     print_status "Checking dependencies..."
     
     local missing_deps=()
-    local deps=("hyprland" "waybar" "rofi" "swww" "cliphist" "wl-clipboard" "matugen" "kitty" "nautilus")
+    local deps=("hyprland" "waybar" "rofi" "swww" "cliphist" "wl-clipboard" "matugen" "kitty" "nautilus" "pamixer")
     
     for dep in "${deps[@]}"; do
         if ! command -v "$dep" &> /dev/null; then

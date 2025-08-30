@@ -21,10 +21,10 @@ Run the automated installation script:
 Ensure you have the following packages installed:
 ```bash
 # Arch Linux
-sudo pacman -S hyprland waybar rofi swww cliphist wl-clipboard matugen oh-my-zsh-git
+sudo pacman -S hyprland waybar rofi swww cliphist wl-clipboard matugen pamixer oh-my-zsh-git
 
 # Or using AUR helper (yay/paru)
-yay -S hyprland waybar rofi swww cliphist wl-clipboard matugen oh-my-zsh-git
+yay -S hyprland waybar rofi swww cliphist wl-clipboard matugen pamixer oh-my-zsh-git
 ```
 
 ### Installation Steps
