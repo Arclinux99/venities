@@ -7,14 +7,6 @@ As for the wallpaper, i use swww. The wallpaper picker script that i made uses s
 
 Special credit to [JaKooLit](https://github.com/JaKooLit), i used some of his scripts and waybar settings
 
-## Features
-- **Hyprland** window manager with custom configurations
-- **Waybar** status bar with multiple layouts and styles
-- **Rofi** application launcher and menu system
-- **Swww** wallpaper daemon with automatic color scheme generation
-- **Cliphist** clipboard manager with rofi integration
-- **Matugen** automatic color scheme generation from wallpapers
-- **Oh My Zsh** with auto-suggestions and syntax highlighting
 
 ## Quick Installation
 
