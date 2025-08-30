@@ -46,6 +46,9 @@ systemctl --user enable --now wireplumber
 # Test volume control
 pamixer --get-volume
 ~/.config/hypr/scripts/volume.sh --get
+
+# Run comprehensive audio test
+./test_audio.sh
 ```
 
 ## Key Bindings
