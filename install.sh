@@ -150,6 +150,23 @@ install_oh_my_zsh() {
     fi
 }
 
+# Create necessary directories
+create_directories() {
+    print_status "Creating necessary directories..."
+    
+    # Create screenshots directory
+    mkdir -p "$HOME/Pictures/Screenshots"
+    print_success "Screenshots directory created at ~/Pictures/Screenshots"
+    
+    # Create clipboard history directory (cliphist stores in ~/.cache by default)
+    mkdir -p "$HOME/.cache/cliphist"
+    print_success "Clipboard history directory prepared"
+    
+    # Create wallpaper directory
+    mkdir -p "$HOME/Pictures/wallpapers"
+    print_success "Wallpapers directory created"
+}
+
 # Copy configurations
 copy_configs() {
     print_status "Copying configuration files..."
@@ -162,8 +179,7 @@ copy_configs() {
     cp .zshrc "$HOME/.zshrc"
     print_success "Zsh configuration copied"
     
-    # Create wallpaper directory and copy wallpapers
-    mkdir -p "$HOME/Pictures/wallpapers"
+    # Copy wallpapers
     cp wallpapers/* "$HOME/Pictures/wallpapers/"
     print_success "Wallpapers copied to ~/Pictures/wallpapers"
 }
@@ -225,6 +241,7 @@ main() {
     handle_hyprland_backup  # Handle Hyprland backup at the beginning
     check_dependencies
     install_oh_my_zsh
+    create_directories  # Create necessary directories for screenshots and clipboard
     copy_configs
     setup_waybar_ja  # Setup waybar ja directory for symbolic links
     set_permissions
@@ -238,6 +255,7 @@ main() {
     echo -e "  3. ${CYAN}Switch to zsh${NC}: chsh -s \$(which zsh)"
     echo ""
     print_status "Key bindings:"
+    echo -e "  ${CYAN}Super + Shift + S${NC} - Screenshot (area selection)"
     echo -e "  ${CYAN}Super + Shift + W${NC} - Wallpaper picker"
     echo -e "  ${CYAN}Super + V${NC} - Clipboard history"
     echo -e "  ${CYAN}Super + Shift + V${NC} - Clear clipboard"
