@@ -1,0 +1,13 @@
+[Unit]
+Description=Audio Configuration Setup
+After=pipewire.service pipewire-pulse.service wireplumber.service
+Wants=pipewire.service pipewire-pulse.service wireplumber.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /home/arcv1/venities/audio-config.sh
+RemainAfterExit=yes
+User=%i
+
+[Install]
+WantedBy=default.target
