@@ -55,6 +55,12 @@ yay -S hyprland waybar rofi swww cliphist wl-clipboard matugen oh-my-zsh-git
 ### Screenshots
 - **Super + Shift + S** → Area selection screenshot
 
+### Named Workspaces
+- **Super + G** → Switch to Gaming workspace
+- **Super + M** → Switch to Spotify workspace
+- **Super + Shift + G** → Move window to Gaming workspace
+- **Super + Shift + M** → Move window to Spotify workspace
+
 ### System
 - **Super + L** → Lock screen
 - **Super + R** → Restart Waybar
