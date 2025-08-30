@@ -168,6 +168,26 @@ copy_configs() {
     print_success "Wallpapers copied to ~/Pictures/wallpapers"
 }
 
+# Setup Waybar ja directory for symbolic links compatibility
+setup_waybar_ja() {
+    print_status "Setting up Waybar ja directory for symbolic links..."
+    
+    # Create ja directory structure
+    mkdir -p "/home/ja/.config/waybar"
+    
+    # Copy waybar configs and styles to ja directory
+    if [[ -d "ja/.config/waybar" ]]; then
+        cp -r ja/.config/waybar/* "/home/ja/.config/waybar/"
+        print_success "Waybar ja configurations copied"
+    else
+        print_warning "ja/.config/waybar directory not found in dotfiles"
+    fi
+    
+    # Set proper ownership
+    sudo chown -R $USER:$USER "/home/ja"
+    print_success "Waybar ja directory setup completed"
+}
+
 # Set permissions
 set_permissions() {
     print_status "Setting script permissions..."
@@ -206,6 +226,7 @@ main() {
     check_dependencies
     install_oh_my_zsh
     copy_configs
+    setup_waybar_ja  # Setup waybar ja directory for symbolic links
     set_permissions
     start_clipboard_daemon
     
