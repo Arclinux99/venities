@@ -21,10 +21,10 @@ Run the automated installation script:
 Ensure you have the following packages installed:
 ```bash
 # Arch Linux
-sudo pacman -S hyprland waybar rofi swww cliphist wl-clipboard matugen pamixer oh-my-zsh-git
+sudo pacman -S hyprland waybar rofi swww cliphist wl-clipboard matugen pamixer oh-my-zsh-git pipewire pipewire-pulse pipewire-alsa wireplumber
 
 # Or using AUR helper (yay/paru)
-yay -S hyprland waybar rofi swww cliphist wl-clipboard matugen pamixer oh-my-zsh-git
+yay -S hyprland waybar rofi swww cliphist wl-clipboard matugen pamixer oh-my-zsh-git pipewire pipewire-pulse pipewire-alsa wireplumber
 ```
 
 ### Installation Steps
@@ -32,7 +32,21 @@ yay -S hyprland waybar rofi swww cliphist wl-clipboard matugen pamixer oh-my-zsh
 2. Copy configurations to your home directory
 3. Install Oh My Zsh plugins
 4. Set up wallpaper directory
-5. Reload Hyprland configuration
+5. Setup audio system (see Audio Setup section)
+6. Reload Hyprland configuration
+
+### Audio Setup
+After installation, enable audio services:
+```bash
+# Enable PipeWire audio services
+systemctl --user enable --now pipewire
+systemctl --user enable --now pipewire-pulse
+systemctl --user enable --now wireplumber
+
+# Test volume control
+pamixer --get-volume
+~/.config/hypr/scripts/volume.sh --get
+```
 
 ## Key Bindings
 
@@ -60,6 +74,27 @@ yay -S hyprland waybar rofi swww cliphist wl-clipboard matugen pamixer oh-my-zsh
 - **Super + M** → Switch to Spotify workspace
 - **Super + Shift + G** → Move window to Gaming workspace
 - **Super + Shift + M** → Move window to Spotify workspace
+
+### Audio/Volume Control
+- **XF86AudioRaiseVolume** → Increase volume (+2%)
+- **XF86AudioLowerVolume** → Decrease volume (-2%)
+- **XF86AudioMute** → Toggle mute/unmute
+- **XF86AudioMicMute** → Toggle microphone mute
+- **XF86AudioNext/Prev/Pause** → Media player controls
+
+#### Waybar Volume Control
+- **Volume Icon**: Hover cursor over volume icon in Waybar
+  - **Left Click** → Toggle mute/unmute
+  - **Right Click** → Open PavuControl audio mixer
+  - **Scroll Up** → Increase volume (+5%)
+  - **Scroll Down** → Decrease volume (-5%)
+
+#### Music Player Control (MPRIS)
+- **Music Icon**: Hover cursor over music/media icon in Waybar
+  - **Left Click** → Previous track
+  - **Middle Click** → Play/Pause
+  - **Right Click** → Next track
+  - **Scroll Up/Down** → Volume control
 
 ### System
 - **Super + L** → Lock screen
